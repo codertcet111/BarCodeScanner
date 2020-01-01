@@ -16,15 +16,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdU-f7-Tfy">
-                                <rect key="frame" x="189.5" y="94" width="35" height="30"/>
-                                <state key="normal" title="Scan"/>
+                                <rect key="frame" x="182" y="94" width="50" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="n94-g1-Ui0"/>
+                                </constraints>
+                                <state key="normal" title="Scan">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="scaneAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J7y-MU-ccE"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSL-JO-e9i">
-                                <rect key="frame" x="118.5" y="144" width="177" height="30"/>
-                                <state key="normal" title="Generate Invoice and mail"/>
+                                <rect key="frame" x="107" y="144" width="200" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="yRb-bV-jjJ"/>
+                                </constraints>
+                                <state key="normal" title="Generate Invoice and mail">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="generateAndInvoiceMailAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="czH-Lu-UTt"/>
                                 </connections>
@@ -107,9 +119,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDE-87-SeT">
-                                <rect key="frame" x="217.5" y="194" width="39" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDE-87-SeT">
+                                <rect key="frame" x="202.5" y="194" width="25.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -134,7 +146,7 @@
                             <constraint firstItem="tdU-f7-Tfy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="RIK-np-HDG"/>
                             <constraint firstItem="328-jX-c77" firstAttribute="top" secondItem="TxP-VZ-v36" secondAttribute="bottom" constant="10" id="UtL-8o-d1v"/>
                             <constraint firstItem="TxP-VZ-v36" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" multiplier="0.7" id="VlM-9a-0mH"/>
-                            <constraint firstItem="jDE-87-SeT" firstAttribute="leading" secondItem="TxP-VZ-v36" secondAttribute="trailing" constant="30" id="YKU-vB-FOM"/>
+                            <constraint firstItem="jDE-87-SeT" firstAttribute="leading" secondItem="TxP-VZ-v36" secondAttribute="trailing" constant="15" id="YKU-vB-FOM"/>
                             <constraint firstItem="jDE-87-SeT" firstAttribute="centerY" secondItem="TxP-VZ-v36" secondAttribute="centerY" id="xfX-uj-idP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -146,11 +158,97 @@
                         <outlet property="priceText" destination="jDE-87-SeT" id="GBF-u1-wA4"/>
                         <outlet property="scaneButton" destination="tdU-f7-Tfy" id="yuF-N6-FeS"/>
                         <outlet property="totalPriceTextLabel" destination="TxP-VZ-v36" id="5eZ-cQ-xgu"/>
+                        <segue destination="Uby-4P-eBU" kind="show" identifier="idSeguePresentPreview" id="FoY-Bx-cGQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
         </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="gpu-UL-3vx">
+            <objects>
+                <viewController storyboardIdentifier="PreviewViewController" id="Uby-4P-eBU" customClass="PreviewViewController" customModule="BarScannerInvoiceGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5o4-nE-Chx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RdL-vq-mnE">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDx-Ip-xye">
+                                        <rect key="frame" x="0.0" y="40" width="414" height="768"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKf-LL-V1G">
+                                        <rect key="frame" x="147" y="4" width="120" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="5AX-8P-ifl"/>
+                                        </constraints>
+                                        <state key="normal" title="Mail Invoice">
+                                            <color key="titleColor" white="0.97999999999999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="MailInvoiceAction:" destination="Uby-4P-eBU" eventType="touchUpInside" id="cvO-6h-ktl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="TDx-Ip-xye" secondAttribute="bottom" id="3C6-vL-nY2"/>
+                                    <constraint firstItem="TDx-Ip-xye" firstAttribute="top" relation="greaterThanOrEqual" secondItem="zKf-LL-V1G" secondAttribute="bottom" constant="5" id="9la-kO-Z1R"/>
+                                    <constraint firstItem="zKf-LL-V1G" firstAttribute="centerX" secondItem="RdL-vq-mnE" secondAttribute="centerX" id="BVg-gT-iEV"/>
+                                    <constraint firstItem="TDx-Ip-xye" firstAttribute="top" secondItem="RdL-vq-mnE" secondAttribute="top" constant="40" id="NPN-W7-Iic"/>
+                                    <constraint firstAttribute="trailing" secondItem="TDx-Ip-xye" secondAttribute="trailing" id="PU6-Hk-7P2"/>
+                                    <constraint firstItem="TDx-Ip-xye" firstAttribute="leading" secondItem="RdL-vq-mnE" secondAttribute="leading" id="hFM-U0-ttD"/>
+                                    <constraint firstItem="zKf-LL-V1G" firstAttribute="top" secondItem="RdL-vq-mnE" secondAttribute="top" constant="4" id="uAX-Nq-7fj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TcK-r4-xxA" firstAttribute="trailing" secondItem="RdL-vq-mnE" secondAttribute="trailing" id="4aQ-JW-U4s"/>
+                            <constraint firstItem="RdL-vq-mnE" firstAttribute="top" secondItem="TcK-r4-xxA" secondAttribute="top" id="9Ft-nW-QbU"/>
+                            <constraint firstItem="RdL-vq-mnE" firstAttribute="leading" secondItem="TcK-r4-xxA" secondAttribute="leading" id="G3d-C6-3o4"/>
+                            <constraint firstItem="TcK-r4-xxA" firstAttribute="bottom" secondItem="RdL-vq-mnE" secondAttribute="bottom" id="igd-cP-xI7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="TcK-r4-xxA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pHw-Y0-E6Y"/>
+                    <connections>
+                        <outlet property="mailInvoiceBtn" destination="zKf-LL-V1G" id="UsD-OL-hOI"/>
+                        <outlet property="webPreview" destination="TDx-Ip-xye" id="tdF-Ya-kjp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xB3-9j-INO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1797.1014492753625" y="135.9375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ugM-vh-rOj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="igF-yw-O4o" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="MeD-Qd-Fb1">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Uby-4P-eBU" kind="relationship" relationship="rootViewController" id="VgH-kE-PQB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dzE-La-CAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886.95652173913049" y="135.9375"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="FoY-Bx-cGQ"/>
+    </inferredMetricsTieBreakers>
 </document>

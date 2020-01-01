@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		695E5610560C8C9B48E3E6EB /* Pods_BarScannerInvoiceGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169AA43C9F74948D5DA2CD0E /* Pods_BarScannerInvoiceGenerator.framework */; };
+		841C632423BCF3C9007B1DA5 /* invoice.html in Resources */ = {isa = PBXBuildFile; fileRef = 841C632123BCF3C9007B1DA5 /* invoice.html */; };
+		841C632523BCF3C9007B1DA5 /* last_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 841C632223BCF3C9007B1DA5 /* last_item.html */; };
+		841C632623BCF3C9007B1DA5 /* single_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 841C632323BCF3C9007B1DA5 /* single_item.html */; };
+		841C632923BCF4F5007B1DA5 /* InvoiceComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C632823BCF4F5007B1DA5 /* InvoiceComposer.swift */; };
+		841C632B23BCFC3B007B1DA5 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C632A23BCFC3B007B1DA5 /* PreviewViewController.swift */; };
+		841C632D23BD03E8007B1DA5 /* CustomPrintPageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841C632C23BD03E8007B1DA5 /* CustomPrintPageRenderer.swift */; };
+		841C632F23BD1466007B1DA5 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841C632E23BD1466007B1DA5 /* WebKit.framework */; };
 		842F0C5623BC9536006FFE7E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F0C5523BC9536006FFE7E /* AppDelegate.swift */; };
 		842F0C5823BC9536006FFE7E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F0C5723BC9536006FFE7E /* SceneDelegate.swift */; };
 		842F0C5D23BC9536006FFE7E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842F0C5B23BC9536006FFE7E /* Main.storyboard */; };
@@ -18,6 +26,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10017BA430B78F27C3D9998E /* Pods-BarScannerInvoiceGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarScannerInvoiceGenerator.debug.xcconfig"; path = "Target Support Files/Pods-BarScannerInvoiceGenerator/Pods-BarScannerInvoiceGenerator.debug.xcconfig"; sourceTree = "<group>"; };
+		169AA43C9F74948D5DA2CD0E /* Pods_BarScannerInvoiceGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarScannerInvoiceGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F0B8910209D6333E4E2BCC4 /* Pods-BarScannerInvoiceGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarScannerInvoiceGenerator.release.xcconfig"; path = "Target Support Files/Pods-BarScannerInvoiceGenerator/Pods-BarScannerInvoiceGenerator.release.xcconfig"; sourceTree = "<group>"; };
+		841C632123BCF3C9007B1DA5 /* invoice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = invoice.html; path = ../../../Downloads/Print2PDF/invoice.html; sourceTree = "<group>"; };
+		841C632223BCF3C9007B1DA5 /* last_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = last_item.html; path = ../../../Downloads/Print2PDF/last_item.html; sourceTree = "<group>"; };
+		841C632323BCF3C9007B1DA5 /* single_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = single_item.html; path = ../../../Downloads/Print2PDF/single_item.html; sourceTree = "<group>"; };
+		841C632823BCF4F5007B1DA5 /* InvoiceComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceComposer.swift; sourceTree = "<group>"; };
+		841C632A23BCFC3B007B1DA5 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		841C632C23BD03E8007B1DA5 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
+		841C632E23BD1466007B1DA5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		842F0C5223BC9536006FFE7E /* BarScannerInvoiceGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarScannerInvoiceGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842F0C5523BC9536006FFE7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		842F0C5723BC9536006FFE7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,17 +53,50 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841C632F23BD1466007B1DA5 /* WebKit.framework in Frameworks */,
+				695E5610560C8C9B48E3E6EB /* Pods_BarScannerInvoiceGenerator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		417EEB27FC1CA2FE97D968FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10017BA430B78F27C3D9998E /* Pods-BarScannerInvoiceGenerator.debug.xcconfig */,
+				1F0B8910209D6333E4E2BCC4 /* Pods-BarScannerInvoiceGenerator.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		841C632023BCF3AA007B1DA5 /* HTML Template */ = {
+			isa = PBXGroup;
+			children = (
+				841C632123BCF3C9007B1DA5 /* invoice.html */,
+				841C632223BCF3C9007B1DA5 /* last_item.html */,
+				841C632323BCF3C9007B1DA5 /* single_item.html */,
+			);
+			path = "HTML Template";
+			sourceTree = "<group>";
+		};
+		841C632723BCF4DB007B1DA5 /* Invoice Generator */ = {
+			isa = PBXGroup;
+			children = (
+				841C632823BCF4F5007B1DA5 /* InvoiceComposer.swift */,
+			);
+			path = "Invoice Generator";
+			sourceTree = "<group>";
+		};
 		842F0C4923BC9536006FFE7E = {
 			isa = PBXGroup;
 			children = (
+				841C632723BCF4DB007B1DA5 /* Invoice Generator */,
+				841C632023BCF3AA007B1DA5 /* HTML Template */,
 				842F0C5423BC9536006FFE7E /* BarScannerInvoiceGenerator */,
 				842F0C5323BC9536006FFE7E /* Products */,
+				417EEB27FC1CA2FE97D968FF /* Pods */,
+				F5991F58DA29F2FB38D72FC8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +115,8 @@
 				842F0C5723BC9536006FFE7E /* SceneDelegate.swift */,
 				842F0C6C23BC9BD1006FFE7E /* HomeViewController.swift */,
 				842F0C6E23BC9D62006FFE7E /* ItemsListingTableViewCell.swift */,
+				841C632A23BCFC3B007B1DA5 /* PreviewViewController.swift */,
+				841C632C23BD03E8007B1DA5 /* CustomPrintPageRenderer.swift */,
 				842F0C5B23BC9536006FFE7E /* Main.storyboard */,
 				842F0C6123BC9538006FFE7E /* Assets.xcassets */,
 				842F0C6323BC9538006FFE7E /* LaunchScreen.storyboard */,
@@ -73,6 +126,15 @@
 			path = BarScannerInvoiceGenerator;
 			sourceTree = "<group>";
 		};
+		F5991F58DA29F2FB38D72FC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				841C632E23BD1466007B1DA5 /* WebKit.framework */,
+				169AA43C9F74948D5DA2CD0E /* Pods_BarScannerInvoiceGenerator.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -80,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 842F0C6923BC9538006FFE7E /* Build configuration list for PBXNativeTarget "BarScannerInvoiceGenerator" */;
 			buildPhases = (
+				30F51726C559814BA060C13A /* [CP] Check Pods Manifest.lock */,
 				842F0C4E23BC9536006FFE7E /* Sources */,
 				842F0C4F23BC9536006FFE7E /* Frameworks */,
 				842F0C5023BC9536006FFE7E /* Resources */,
+				9A6E85D5FAC131CF9362EA05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,13 +195,58 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841C632423BCF3C9007B1DA5 /* invoice.html in Resources */,
+				841C632523BCF3C9007B1DA5 /* last_item.html in Resources */,
 				842F0C6523BC9538006FFE7E /* LaunchScreen.storyboard in Resources */,
 				842F0C6223BC9538006FFE7E /* Assets.xcassets in Resources */,
 				842F0C5D23BC9536006FFE7E /* Main.storyboard in Resources */,
+				841C632623BCF3C9007B1DA5 /* single_item.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30F51726C559814BA060C13A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BarScannerInvoiceGenerator-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A6E85D5FAC131CF9362EA05 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BarScannerInvoiceGenerator/Pods-BarScannerInvoiceGenerator-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BarScannerInvoiceGenerator/Pods-BarScannerInvoiceGenerator-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BarScannerInvoiceGenerator/Pods-BarScannerInvoiceGenerator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		842F0C4E23BC9536006FFE7E /* Sources */ = {
@@ -146,9 +255,12 @@
 			files = (
 				842F0C5623BC9536006FFE7E /* AppDelegate.swift in Sources */,
 				842F0C6023BC9536006FFE7E /* BarScannerInvoiceGenerator.xcdatamodeld in Sources */,
+				841C632B23BCFC3B007B1DA5 /* PreviewViewController.swift in Sources */,
 				842F0C5823BC9536006FFE7E /* SceneDelegate.swift in Sources */,
+				841C632D23BD03E8007B1DA5 /* CustomPrintPageRenderer.swift in Sources */,
 				842F0C6D23BC9BD1006FFE7E /* HomeViewController.swift in Sources */,
 				842F0C6F23BC9D62006FFE7E /* ItemsListingTableViewCell.swift in Sources */,
+				841C632923BCF4F5007B1DA5 /* InvoiceComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +402,7 @@
 		};
 		842F0C6A23BC9538006FFE7E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10017BA430B78F27C3D9998E /* Pods-BarScannerInvoiceGenerator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -308,6 +421,7 @@
 		};
 		842F0C6B23BC9538006FFE7E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F0B8910209D6333E4E2BCC4 /* Pods-BarScannerInvoiceGenerator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
