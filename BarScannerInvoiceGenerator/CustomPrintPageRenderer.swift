@@ -34,7 +34,7 @@ class CustomPrintPageRenderer: UIPrintPageRenderer {
         let headerText: NSString = "Dad Of Cad"
      
         // Set the desired font.
-        let font = UIFont(name: "Arial-BoldItalicMT", size: 10.0)
+        let font = UIFont(name: "Arial-BoldItalicMT", size: 20.0)
      
         // Specify some text attributes we want to apply to the header text.
         let textAttributes = [NSAttributedString.Key.font: font!, NSAttributedString.Key.foregroundColor: UIColor(red: 243.0/255, green: 82.0/255.0, blue: 30.0/255.0, alpha: 1.0), NSAttributedString.Key.kern: 7.5] as [NSAttributedString.Key : Any]

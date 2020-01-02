@@ -24,6 +24,8 @@
 		842F0C6D23BC9BD1006FFE7E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F0C6C23BC9BD1006FFE7E /* HomeViewController.swift */; };
 		842F0C6F23BC9D62006FFE7E /* ItemsListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842F0C6E23BC9D62006FFE7E /* ItemsListingTableViewCell.swift */; };
 		8440EE8323BDF2BD004E5CE0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440EE8223BDF2BD004E5CE0 /* Extension.swift */; };
+		84C6BE3C23BE0B910069AD48 /* GatherReceiverInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6BE3B23BE0B910069AD48 /* GatherReceiverInfoViewController.swift */; };
+		84C6BE3F23BE15C70069AD48 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C6BE3E23BE15C70069AD48 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		842F0C6C23BC9BD1006FFE7E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		842F0C6E23BC9D62006FFE7E /* ItemsListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListingTableViewCell.swift; sourceTree = "<group>"; };
 		8440EE8223BDF2BD004E5CE0 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		84C6BE3B23BE0B910069AD48 /* GatherReceiverInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GatherReceiverInfoViewController.swift; sourceTree = "<group>"; };
+		84C6BE3E23BE15C70069AD48 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,7 @@
 				842F0C5523BC9536006FFE7E /* AppDelegate.swift */,
 				842F0C5723BC9536006FFE7E /* SceneDelegate.swift */,
 				842F0C6C23BC9BD1006FFE7E /* HomeViewController.swift */,
+				84C6BE3B23BE0B910069AD48 /* GatherReceiverInfoViewController.swift */,
 				842F0C6E23BC9D62006FFE7E /* ItemsListingTableViewCell.swift */,
 				841C632A23BCFC3B007B1DA5 /* PreviewViewController.swift */,
 				841C632C23BD03E8007B1DA5 /* CustomPrintPageRenderer.swift */,
@@ -125,6 +130,7 @@
 				842F0C6623BC9538006FFE7E /* Info.plist */,
 				842F0C5E23BC9536006FFE7E /* BarScannerInvoiceGenerator.xcdatamodeld */,
 				8440EE8223BDF2BD004E5CE0 /* Extension.swift */,
+				84C6BE3E23BE15C70069AD48 /* Helper.swift */,
 			);
 			path = BarScannerInvoiceGenerator;
 			sourceTree = "<group>";
@@ -256,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C6BE3F23BE15C70069AD48 /* Helper.swift in Sources */,
 				8440EE8323BDF2BD004E5CE0 /* Extension.swift in Sources */,
 				842F0C5623BC9536006FFE7E /* AppDelegate.swift in Sources */,
 				842F0C6023BC9536006FFE7E /* BarScannerInvoiceGenerator.xcdatamodeld in Sources */,
@@ -264,6 +271,7 @@
 				841C632D23BD03E8007B1DA5 /* CustomPrintPageRenderer.swift in Sources */,
 				842F0C6D23BC9BD1006FFE7E /* HomeViewController.swift in Sources */,
 				842F0C6F23BC9D62006FFE7E /* ItemsListingTableViewCell.swift in Sources */,
+				84C6BE3C23BE0B910069AD48 /* GatherReceiverInfoViewController.swift in Sources */,
 				841C632923BCF4F5007B1DA5 /* InvoiceComposer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

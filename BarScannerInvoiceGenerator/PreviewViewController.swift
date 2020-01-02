@@ -43,7 +43,7 @@ class PreviewViewController: UIViewController, WKNavigationDelegate, WKUIDelegat
         if MFMailComposeViewController.canSendMail() {
             let mailComposeViewController = MFMailComposeViewController()
             mailComposeViewController.mailComposeDelegate = self
-            mailComposeViewController.setMessageBody("<p>You're so awesome, Thanks for the shopping!</p>", isHTML: true)
+            mailComposeViewController.setMessageBody("<p>Thanks for the shopping!</p>", isHTML: true)
             mailComposeViewController.setSubject("Invoice")
             let fileData = NSData(contentsOfFile: invoiceComposer.pdfFilename)
             mailComposeViewController.addAttachmentData(fileData! as Data, mimeType: "application/pdf", fileName: "Invoice")
@@ -61,7 +61,7 @@ class PreviewViewController: UIViewController, WKNavigationDelegate, WKUIDelegat
                                                            invoiceDate: invoiceInfo["invoiceDate"] as! String,
                                                            recipientInfo: invoiceInfo["recipientInfo"] as! String,
                                                            items: invoiceInfo["items"] as! [[String: String]],
-                                                           totalAmount: invoiceInfo["totalAmount"] as! String) {
+                                                           totalAmount: invoiceInfo["totalAmount"] as! String, receiverName: invoiceInfo["receiverName"] as! String, receiverEmail: invoiceInfo["receiverEmail"] as! String) {
      
 //            webPreview.loadHTMLString(invoiceHTML, baseURL: NSURL(string: invoiceComposer.pathToInvoiceHTMLTemplate!)!)
             webPreview.loadHTMLString(invoiceHTML, baseURL: Bundle.main.bundleURL)

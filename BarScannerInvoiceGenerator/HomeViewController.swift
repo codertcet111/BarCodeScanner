@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
 //        self.itemsArray = [["item": "Bottle", "price": "200", "productCode": "X1123"], ["item": "Bottle 2", "price": "100", "productCode": "X1123"]]
 //        self.totalCost = 300.0
         if self.itemsArray.count != 0{
-            self.performSegue(withIdentifier: "idSeguePresentPreview", sender: self)
+            self.performSegue(withIdentifier: "gatherReceiverDataSegue", sender: self)
         }else{
             self.showToast(message: "No Items")
         }
@@ -85,14 +85,22 @@ class HomeViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
-            if identifier == "idSeguePresentPreview" {
-                let previewViewController = segue.destination as! PreviewViewController
-                
-                let date = Date()
-                let formatter = DateFormatter()
-                formatter.dateFormat = "dd.MM.yyyy"
-                
-                previewViewController.invoiceInfo = ["invoiceNumber": "\(Int.random(in: 1000000 ... 6000000))", "invoiceDate": "\(formatter.string(from: date))", "recipientInfo": "Not an Address", "items": itemsArray, "totalAmount": "\(self.totalCost)"] 
+            if identifier == "gatherReceiverDataSegue" {
+                let nextViewController = segue.destination as! GatherReceiverInfoViewController
+//                var taxIsTheir = false
+//                for item in itemsArray{
+//                    if item["item"] == "GST Tax (18.0 %)"{
+//                        taxIsTheir = true
+//                    }
+//                }
+//                if !taxIsTheir{
+//                    let gstTax = (self.totalCost * 0.18)
+//                    itemsArray.append(["item": gstTextString, "price": "\(gstTax)", "productCode": "18.0 %"])
+//                    self.totalCost += gstTax
+//                }
+                nextViewController.itemsArray = self.itemsArray
+                nextViewController.totalItems = self.totalItems
+                nextViewController.totalCost = self.totalCost
             }
         }
     }

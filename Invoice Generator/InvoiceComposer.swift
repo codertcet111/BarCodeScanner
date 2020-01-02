@@ -27,6 +27,8 @@ class InvoiceComposer: NSObject {
     
     var invoiceNumber: String!
     
+    var receiverInfo: String!
+    
     var pdfFilename: String!
 
 //    var invoiceNumber = "\(Int.random(in: 1000000 ... 6000000))"
@@ -68,10 +70,10 @@ class InvoiceComposer: NSObject {
     }
     
     
-    func renderInvoice(invoiceNumber: String, invoiceDate: String, recipientInfo: String, items: [[String: String]], totalAmount: String) -> String! {
+    func renderInvoice(invoiceNumber: String, invoiceDate: String, recipientInfo: String, items: [[String: String]], totalAmount: String, receiverName: String, receiverEmail: String) -> String! {
         // Store the invoice number for future use.
            self.invoiceNumber = invoiceNumber
-        
+        self.receiverInfo = "\(receiverName)<br>\(receiverEmail)<br>"
            do {
                // Load the invoice HTML template code into a String variable.
                var HTMLContent = try String(contentsOfFile: pathToInvoiceHTMLTemplate!)
@@ -96,7 +98,7 @@ class InvoiceComposer: NSObject {
                HTMLContent = HTMLContent.replacingOccurrences(of: "#SENDER_INFO#", with: senderInfo)
         
                // Recipient info.
-               HTMLContent = HTMLContent.replacingOccurrences(of: "#RECIPIENT_INFO#", with: recipientInfo.replacingOccurrences(of: "\n", with: "<br>"))
+               HTMLContent = HTMLContent.replacingOccurrences(of: "#RECIPIENT_INFO#", with: receiverInfo)
         
                // Payment method.
                HTMLContent = HTMLContent.replacingOccurrences(of: "#PAYMENT_METHOD#", with: paymentMethod)
