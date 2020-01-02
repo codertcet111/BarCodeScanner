@@ -15,13 +15,15 @@ class InvoiceComposer: NSObject {
 
     let pathToLastItemHTMLTemplate = Bundle.main.path(forResource: "last_item", ofType: "html")
 
-    let senderInfo = "Dad Of Cad<br>211 - B wing<br>Western Edge 2<br>401106 - Mumbai<br>India"
+    let senderInfo = "Dad Of Cad<br>211, Western Edge II<br>Behind Metro Super market<br>Borivali east, Mumbai - 400066<br>gaurav@dadofcad.com<br>PAN : CATPS2150L | GSTIN : 27CATPS2150L1Z2<br>"
 
     let dueDate = ""
 
-    let paymentMethod = "Cash"
+    let paymentMethod = "Current A/c name : DAD OF CAD<br>A/c no : 333705500055<br>Bank : ICICI<br>IFSC : ICIC0003337<br>Branch : Borivali TATA Power Branch<br>"
 
-    let logoImageURL = "https://www.appcoda.com/wp-content/uploads/2015/12/blog-logo-dark-400.png"
+//    let logoImageURL = "https://www.appcoda.com/wp-content/uploads/2015/12/blog-logo-dark-400.png"
+    
+    let logoImageURL = "DOCLogoPNG.png"
     
     var invoiceNumber: String!
     
@@ -76,7 +78,10 @@ class InvoiceComposer: NSObject {
         
                // Replace all the placeholders with real values except for the items.
                // The logo image.
-               HTMLContent = HTMLContent.replacingOccurrences(of: "#LOGO_IMAGE#", with: logoImageURL)
+            let image = UIImage(named:"DOCLogoPNG") // Your Image
+            let imageData = image!.pngData() ?? nil
+            let base64String = imageData?.base64EncodedString() ?? "" // Your String Image
+               HTMLContent = HTMLContent.replacingOccurrences(of: "#LOGO_IMAGE#", with: "<img src='data:image/png;base64,\(String(describing: base64String) )'>")
         
                // Invoice number.
                HTMLContent = HTMLContent.replacingOccurrences(of: "#INVOICE_NUMBER#", with: invoiceNumber)
@@ -116,7 +121,7 @@ class InvoiceComposer: NSObject {
                       }
            
                       // Replace the description and price placeholders with the actual values.
-                      itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_DESC#", with: items[i]["item"]!)
+                      itemHTMLContent = itemHTMLContent.replacingOccurrences(of: "#ITEM_DESC#", with: "\(items[i]["item"]!) (\(items[i]["productCode"]!))")
            
                       // Format each item's price as a currency value.
                       let formattedPrice = AppDelegate.getAppDelegate().getStringValueFormattedAsCurrency(items[i]["price"]!)

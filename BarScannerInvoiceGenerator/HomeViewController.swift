@@ -18,6 +18,18 @@ class HomeViewController: UIViewController {
     var itemsArray: [[String: String]] = []
     
     //MARK: Outlets
+    @IBOutlet weak var refreshList: UIButton!
+    
+    @IBAction func refreshListAction(_ sender: UIButton) {
+        UIView.animate(withDuration: 1) {
+            self.totalCost = 0.0
+            self.totalItems = 0
+            self.priceText.text = "\(self.totalCost)"
+            self.loadViewIfNeeded()
+            self.itemsArray = []
+            self.itemsListingTable.reloadData()
+        }
+    }
     @IBOutlet weak var scaneButton: UIButton!
     @IBAction func scaneAction(_ sender: UIButton) {
         let viewController = BarcodeScannerViewController()
@@ -52,18 +64,21 @@ class HomeViewController: UIViewController {
     func beutifyView(){
         self.scaneButton.layer.cornerRadius = 10.0
         self.generateInvoiceAndMail.layer.cornerRadius = 10.0
+        self.refreshList.layer.cornerRadius = 10.0
     }
     
-    @objc func removeItemFromArray(_ sender : UISwitch!){
+    @objc func removeItemFromArray(_ sender : UIButton){
        //print(sender.tag)
         if self.itemsArray.indices.contains(sender.tag){
-            let tempItemCost = Double(self.itemsArray[sender.tag]["price"] ?? "0.0") ?? 0.0
-            self.totalCost -= tempItemCost
-            self.totalItems -= 1
-            self.totalPriceTextLabel.text = "\(totalCost)"
-            self.loadViewIfNeeded()
-            self.itemsArray.remove(at: sender.tag)
-            self.itemsListingTable.reloadData()
+            UIView.animate(withDuration: 1) {
+                let tempItemCost = Double(self.itemsArray[sender.tag]["price"] ?? "0.0") ?? 0.0
+                self.totalCost -= tempItemCost
+                self.totalItems -= 1
+                self.priceText.text = "\(self.totalCost)"
+                self.loadViewIfNeeded()
+                self.itemsArray.remove(at: sender.tag)
+                self.itemsListingTable.reloadData()
+            }
         }
     }
     
@@ -114,7 +129,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         cell.selectionStyle = .none
         if self.itemsArray.indices.contains(indexPath.row) {
             let tempItem = self.itemsArray[indexPath.row]
-            cell.itemName.text = tempItem["item"]
+            cell.itemName.text = tempItem["productCode"]
             cell.priceText.text = tempItem["price"]
             cell.itemNumber.text = "\(indexPath.row + 1)"
             cell.itemRemoveBtn.tag = indexPath.row

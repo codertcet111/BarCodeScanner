@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import MessageUI
 
-class PreviewViewController: UIViewController, WKNavigationDelegate, WKUIDelegate{
+class PreviewViewController: UIViewController, WKNavigationDelegate, WKUIDelegate, MFMailComposeViewControllerDelegate{
     
     var invoiceInfo: [String: Any]!
     var invoiceComposer: InvoiceComposer!
@@ -42,11 +42,17 @@ class PreviewViewController: UIViewController, WKNavigationDelegate, WKUIDelegat
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
             let mailComposeViewController = MFMailComposeViewController()
+            mailComposeViewController.mailComposeDelegate = self
+            mailComposeViewController.setMessageBody("<p>You're so awesome, Thanks for the shopping!</p>", isHTML: true)
             mailComposeViewController.setSubject("Invoice")
             let fileData = NSData(contentsOfFile: invoiceComposer.pdfFilename)
             mailComposeViewController.addAttachmentData(fileData! as Data, mimeType: "application/pdf", fileName: "Invoice")
             present(mailComposeViewController, animated: true, completion: nil)
         }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
     }
 
     func createInvoiceAsHTML() {
