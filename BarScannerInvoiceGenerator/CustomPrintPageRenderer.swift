@@ -70,7 +70,7 @@ class CustomPrintPageRenderer: UIPrintPageRenderer {
     override func drawFooterForPage(at pageIndex: Int, in footerRect: CGRect) {
         let footerText: NSString = "Powered by Cortex Solutions!  cortexsolutions.co.in"
      
-        let font = UIFont(name: "Noteworthy-Bold", size: 14.0)
+        let font = UIFont(name: "Arial-BoldItalicMT", size: 14.0)
         let textSize = getTextSize(text: footerText as String, font: font!)
      
         let centerX = footerRect.size.width/2 - textSize.width/2

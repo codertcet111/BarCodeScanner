@@ -73,7 +73,7 @@ class InvoiceComposer: NSObject {
     func renderInvoice(invoiceNumber: String, invoiceDate: String, recipientInfo: String, items: [[String: String]], totalAmount: String, receiverName: String, receiverEmail: String) -> String! {
         // Store the invoice number for future use.
            self.invoiceNumber = invoiceNumber
-        self.receiverInfo = "\(receiverName)<br>\(receiverEmail)<br>"
+        self.receiverInfo = "<br>To,<br>\(receiverName)<br>\(receiverEmail)<br>"
            do {
                // Load the invoice HTML template code into a String variable.
                var HTMLContent = try String(contentsOfFile: pathToInvoiceHTMLTemplate!)

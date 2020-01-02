@@ -19,6 +19,8 @@ class GatherReceiverInfoViewController: UIViewController {
     var discountValue: Double = 0
     var gstTextString = "GST Tax "
     var totalDiscountTextString = "Total Discount"
+    
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var receiverName: UITextField!
     @IBOutlet weak var receiverEmail: UITextField!
     @IBOutlet weak var discountOptionBtn: UIButton!

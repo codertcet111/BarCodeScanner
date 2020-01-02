@@ -43,7 +43,7 @@ class PreviewViewController: UIViewController, WKNavigationDelegate, WKUIDelegat
         if MFMailComposeViewController.canSendMail() {
             let mailComposeViewController = MFMailComposeViewController()
             mailComposeViewController.mailComposeDelegate = self
-            mailComposeViewController.setMessageBody("<p>Thanks for the shopping!</p>", isHTML: true)
+            mailComposeViewController.setMessageBody("<p>Thanks for the shopping with Us!</p>", isHTML: true)
             mailComposeViewController.setSubject("Invoice")
             let fileData = NSData(contentsOfFile: invoiceComposer.pdfFilename)
             mailComposeViewController.addAttachmentData(fileData! as Data, mimeType: "application/pdf", fileName: "Invoice")

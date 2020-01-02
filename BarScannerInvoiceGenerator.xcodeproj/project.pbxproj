@@ -39,7 +39,7 @@
 		841C632A23BCFC3B007B1DA5 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		841C632C23BD03E8007B1DA5 /* CustomPrintPageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPrintPageRenderer.swift; sourceTree = "<group>"; };
 		841C632E23BD1466007B1DA5 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		842F0C5223BC9536006FFE7E /* BarScannerInvoiceGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarScannerInvoiceGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		842F0C5223BC9536006FFE7E /* DOC-B.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DOC-B.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		842F0C5523BC9536006FFE7E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		842F0C5723BC9536006FFE7E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		842F0C5C23BC9536006FFE7E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		842F0C5323BC9536006FFE7E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				842F0C5223BC9536006FFE7E /* BarScannerInvoiceGenerator.app */,
+				842F0C5223BC9536006FFE7E /* DOC-B.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,7 +163,7 @@
 			);
 			name = BarScannerInvoiceGenerator;
 			productName = BarScannerInvoiceGenerator;
-			productReference = 842F0C5223BC9536006FFE7E /* BarScannerInvoiceGenerator.app */;
+			productReference = 842F0C5223BC9536006FFE7E /* DOC-B.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -426,7 +426,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Cortex.BarScannerInvoiceGenerator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "DOC-B";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -446,7 +446,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Cortex.BarScannerInvoiceGenerator;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "DOC-B";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
