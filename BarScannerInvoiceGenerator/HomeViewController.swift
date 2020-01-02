@@ -28,8 +28,8 @@ class HomeViewController: UIViewController {
     }
     @IBOutlet weak var generateInvoiceAndMail: UIButton!
     @IBAction func generateAndInvoiceMailAction(_ sender: UIButton) {
-        self.itemsArray = [["item": "Bottle", "price": "200", "productCode": "X1123"], ["item": "Bottle 2", "price": "100", "productCode": "X1123"]]
-        self.totalCost = 300.0
+//        self.itemsArray = [["item": "Bottle", "price": "200", "productCode": "X1123"], ["item": "Bottle 2", "price": "100", "productCode": "X1123"]]
+//        self.totalCost = 300.0
         if self.itemsArray.count != 0{
             self.performSegue(withIdentifier: "idSeguePresentPreview", sender: self)
         }else{
@@ -111,13 +111,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemsListingTableViewCell") as! ItemsListingTableViewCell
+        cell.selectionStyle = .none
         if self.itemsArray.indices.contains(indexPath.row) {
             let tempItem = self.itemsArray[indexPath.row]
             cell.itemName.text = tempItem["item"]
             cell.priceText.text = tempItem["price"]
-            cell.itemNumber.text = "\(indexPath.row)"
+            cell.itemNumber.text = "\(indexPath.row + 1)"
             cell.itemRemoveBtn.tag = indexPath.row
-            cell.itemRemoveBtn.addTarget(self, action: #selector(self.removeItemFromArray(_:)), for: .valueChanged)
+            cell.itemRemoveBtn.addTarget(self, action: #selector(self.removeItemFromArray(_:)), for: .touchUpInside)
         }
         return cell
     }
@@ -130,22 +131,34 @@ extension HomeViewController: BarcodeScannerCodeDelegate {
      print(code)
     //Add scanned item to self.itemsArray
     //Fecth price, name and ProductCode for product from code received and append it into array
-    let tempCost = 0.0
-    let tempName = ""
-    let tempProductCode = ""
+    var tempCost = 0.0
+    var tempName = ""
+    var tempProductCode = ""
     //
     //Fetch data from code
-    
+    let productInfoArray = code.components(separatedBy: "\n")
+    if productInfoArray.count == 3{
+        if productInfoArray.indices.contains(0){
+            tempName = productInfoArray[0]
+        }
+        if productInfoArray.indices.contains(1){
+            tempCost = Double(productInfoArray[1]) ?? 0.0
+        }
+        if productInfoArray.indices.contains(2){
+            tempProductCode = productInfoArray[2]
+        }
+    }
     //
     self.itemsArray.append(["item": tempName,"price": "\(tempCost)","productCode": tempProductCode])
     self.totalCost += tempCost
     self.totalItems += 1
     //Reoad items table View
     self.itemsListingTable.reloadData()
-    self.totalPriceTextLabel.text = "\(totalCost)"
+    self.priceText.text = "\(totalCost)"
     self.loadViewIfNeeded()
     //controller.reset()
     controller.dismiss(animated: true, completion: nil)
+    self.navigationController?.popViewController(animated: true)
    }
 }
 extension HomeViewController: BarcodeScannerErrorDelegate {
