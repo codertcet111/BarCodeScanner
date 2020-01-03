@@ -25,13 +25,13 @@ class CustomPrintPageRenderer: UIPrintPageRenderer {
      
         // Set the horizontal and vertical insets (that's optional).
         self.setValue(NSValue(cgRect: pageFrame), forKey: "printableRect")
-        self.headerHeight = 50.0
+        self.headerHeight = 10.0
         self.footerHeight = 50.0
     }
     
     override func drawHeaderForPage(at pageIndex: Int, in headerRect: CGRect) {
         // Specify the header text.
-        let headerText: NSString = "Dad Of Cad"
+        let headerText: NSString = ""
      
         // Set the desired font.
         let font = UIFont(name: "Arial-BoldItalicMT", size: 20.0)

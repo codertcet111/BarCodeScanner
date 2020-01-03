@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 class InvoiceComposer: NSObject {
     let pathToInvoiceHTMLTemplate = Bundle.main.path(forResource: "invoice", ofType: "html")
@@ -23,7 +24,7 @@ class InvoiceComposer: NSObject {
 
 //    let logoImageURL = "https://www.appcoda.com/wp-content/uploads/2015/12/blog-logo-dark-400.png"
     
-    let logoImageURL = "DOCLogoPNG.png"
+    let logoImageURL = "https://dadofcad.com/images/logo.png"
     
     var invoiceNumber: String!
     
@@ -40,10 +41,11 @@ class InvoiceComposer: NSObject {
         self.invoiceNumber = "\(Int.random(in: 1000000 ... 6000000))"
     }
     
-    func exportHTMLContentToPDF(HTMLContent: String) {
+    func exportHTMLContentToPDF(HTMLContent: String, wkWebView: WKWebView) {
         let printPageRenderer = CustomPrintPageRenderer()
      
-        let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+//        let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+        let printFormatter = wkWebView.viewPrintFormatter()
         printPageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
      
         let pdfData = drawPDFUsingPrintPageRenderer(printPageRenderer: printPageRenderer)
@@ -80,11 +82,14 @@ class InvoiceComposer: NSObject {
         
                // Replace all the placeholders with real values except for the items.
                // The logo image.
-            let image = UIImage(named:"DOCLogoPNG") // Your Image
-            let imageData = image!.pngData() ?? nil
-            let base64String = imageData?.base64EncodedString() ?? "" // Your String Image
-               HTMLContent = HTMLContent.replacingOccurrences(of: "#LOGO_IMAGE#", with: "<img src='data:image/png;base64,\(String(describing: base64String) )'>")
+//            let image = UIImage(named:"DOCLogoPNG") // Your Image
+//            let imageData = image!.pngData() ?? nil
+//            let base64String = imageData?.base64EncodedString() ?? "" // Your String Image
+//               HTMLContent = HTMLContent.replacingOccurrences(of: "#LOGO_IMAGE#", with: "<img src='data:image/png;base64,\(String(describing: base64String) )'>")
+            
         
+            HTMLContent = HTMLContent.replacingOccurrences(of: "#LOGO_IMAGE#", with: logoImageURL)
+            
                // Invoice number.
                HTMLContent = HTMLContent.replacingOccurrences(of: "#INVOICE_NUMBER#", with: invoiceNumber)
         

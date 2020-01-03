@@ -40,8 +40,8 @@ class HomeViewController: UIViewController {
     }
     @IBOutlet weak var generateInvoiceAndMail: UIButton!
     @IBAction func generateAndInvoiceMailAction(_ sender: UIButton) {
-//        self.itemsArray = [["item": "Bottle", "price": "200", "productCode": "X1123"], ["item": "Bottle 2", "price": "100", "productCode": "X1123"]]
-//        self.totalCost = 300.0
+        self.itemsArray = [["item": "Bottle", "price": "200", "productCode": "X1123"], ["item": "Bottle 2", "price": "100", "productCode": "X1123"]]
+        self.totalCost = 300.0
         if self.itemsArray.count != 0{
             self.performSegue(withIdentifier: "gatherReceiverDataSegue", sender: self)
         }else{
@@ -74,7 +74,7 @@ class HomeViewController: UIViewController {
                 let tempItemCost = Double(self.itemsArray[sender.tag]["price"] ?? "0.0") ?? 0.0
                 self.totalCost -= tempItemCost
                 self.totalItems -= 1
-                self.priceText.text = "\(self.totalCost)"
+                self.priceText.text = "\(String(format:"%.2f", self.totalCost))"
                 self.loadViewIfNeeded()
                 self.itemsArray.remove(at: sender.tag)
                 self.itemsListingTable.reloadData()
@@ -177,7 +177,7 @@ extension HomeViewController: BarcodeScannerCodeDelegate {
     self.totalItems += 1
     //Reoad items table View
     self.itemsListingTable.reloadData()
-    self.priceText.text = "\(totalCost)"
+    self.priceText.text = "\(String(format:"%.2f", totalCost))"
     self.loadViewIfNeeded()
     //controller.reset()
     controller.dismiss(animated: true, completion: nil)

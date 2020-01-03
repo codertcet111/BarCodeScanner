@@ -20,7 +20,7 @@ class PreviewViewController: UIViewController, WKNavigationDelegate, WKUIDelegat
     @IBOutlet weak var webPreview: WKWebView!
     @IBOutlet weak var mailInvoiceBtn: UIButton!
     @IBAction func MailInvoiceAction(_ sender: UIButton) {
-        invoiceComposer.exportHTMLContentToPDF(HTMLContent: HTMLContent)
+        invoiceComposer.exportHTMLContentToPDF(HTMLContent: HTMLContent, wkWebView: webPreview)
         sendEmail()
     }
     
